@@ -15,7 +15,8 @@ namespace Assignment2
             Console.WriteLine("2. Exit");
 
             int input = int.Parse(Console.ReadLine());
-            if (input == 1) {
+            if (input == 1)
+            {
                 Console.WriteLine("Enter value of  side 1");
                 side1 = gettingDimensions();
 
@@ -25,10 +26,16 @@ namespace Assignment2
                 Console.WriteLine("Enter value of  side 3");
                 side3 = gettingDimensions();
 
-                
+                String output = TriangleSolver.Analyze(side1, side2, side3);
+                Console.WriteLine(output);
             }
-            else { Environment.Exit(0); }
-            
+            else if (input == 2)
+            { Environment.Exit(0); }
+            else {
+                Console.WriteLine("please enter correct input 1 or 2");
+
+            }
+            Console.ReadKey();
         }
         public static int gettingDimensions() {
             int dimension = 0;
@@ -37,8 +44,8 @@ namespace Assignment2
                 input = Console.ReadLine();
             }
             while (!int.TryParse(input, out dimension) || dimension < 0);
-            return dimension
-        return 
+            return dimension;
+        
                 }
     }
 }
